@@ -19,9 +19,11 @@
             </div>
           </div>
           <div>
+            <p>Comments {{ count($news->comments) }}</p>
               @for($i=0; $i<count($news->comments); $i++)
                 <div>
-                  <p>{{ $news->comments[$i]->user->name }}</p>
+                  <p>{{ $news->comments[$i]->user->name }}:</p>
+                  <p>{{ $news->comments[$i]->created_at->diffForHumans() }}</p>
                   <p>{{ $news->comments[$i]->comment }}</p>
                 </div>
               @endfor
