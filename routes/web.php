@@ -23,4 +23,12 @@ Route::get('news', [NewsController::class, 'index']);
 
 Route::get('news/{id}', [NewsController::class, 'getNews'])->name('news-detail');
 
+Route::get('signup', function() {
+    return view('signup');
+});
+
+Route::get('login', function() {
+    return view('login');
+});
+
 // Route::get('news/{category}')
